@@ -1,0 +1,39 @@
+﻿@model Team
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <form asp-controller="AdminTeam" asp-action="Update" method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="@Model.Id" />
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label>Önceki Resim</label>
+                            <img src="~/img/@Model.Image" width="80" height="80"/>
+                            <br />
+                            <label>Resim</label>
+                            <input type="file" asp-for="UploadImage" />
+                            <br />
+                            <label>Ad Soyad</label>
+                            <input type="text" asp-for="Fullname" class="form-control" />
+                           
+                            <br />
+                            <label>Unvan</label>
+                            <input type="text" asp-for="Unvan" class="form-control" />
+                            
+                            <br />
+                            <button class="btn btn-primary" type="submit">Ekle</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

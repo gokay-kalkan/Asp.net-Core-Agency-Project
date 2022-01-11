@@ -1,0 +1,32 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <form asp-controller="AdminAbout" asp-action="Update" method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="Id"/>
+                        @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <label>Resim</label>
+                        <input type="file" asp-for="UploadImage" />
+                        <br />
+                        <label>Hakkımızda</label>
+                        <textarea class="form-control" rows="4" asp-for="Description"></textarea>
+                        <br />
+                        <button class="btn btn-primary" type="submit">Günclle</button>
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

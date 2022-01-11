@@ -1,0 +1,43 @@
+﻿@model Istatistic
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <form asp-controller="AdminIstatistic" asp-action="Create" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+
+                            <label>Müşteriler</label>
+                            <input type="text" asp-for="Customers" class="form-control" />
+                            <br />
+                            <label>Teslim Edilen</label>
+                            <input type="text" asp-for="Completed" class="form-control" />
+                            <br />
+                            <label>Yapılan Proje</label>
+                            <input type="text" asp-for="Projects" class="form-control" />
+                            <br />
+                            <label>Teslim Edilen İcon</label>
+                            <input type="text" asp-for="CompletedClass" class="form-control" />
+                            <br />
+                            <label>Yapılan Proje İcon</label>
+                            <input type="text" asp-for="ProjectClass" class="form-control" />
+                            <br />
+                            <label>Müşteri İcon</label>
+                            <input type="text" asp-for="CustomersClass" class="form-control" />
+                            <br />
+                            <button class="btn btn-primary" type="submit">Ekle</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

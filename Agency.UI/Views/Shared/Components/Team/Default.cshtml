@@ -1,0 +1,37 @@
+﻿@model List<Team>
+
+    <section id="team" class="bgSection teams-section">
+        <div class="parallax-overlay"></div>
+        <div class="teams-wrapper wow bounceIn">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Section Header -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
+                        <h2><span class="highlight-text-inverted">Ekibimiz</span></h2>
+
+                        <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Alanında uzman ekibimiz ile sizlere hızlı sorunsuz ve her sorununuza hızlı destek sağlayan ekip kadromuz.</p>
+                    </div>
+
+                    <!-- teams Slider -->
+                    <div id="teams" class="owl-carousel teams">
+
+                        @foreach (var item in Model)
+                        {
+                            <div class="teams-slides col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+                                <img src="~/img/@item.Image" alt="">
+                                <p class="client-info">@item.Fullname</p>
+                                <p>@item.Unvan</p>
+
+                            </div>
+                        }
+
+                        <!-- Slides End -->
+                        <!-- Slides -->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

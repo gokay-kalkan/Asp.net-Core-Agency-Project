@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Http 
+@using Microsoft.AspNetCore.Session 
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/NiceAdmin/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    <h2>@Context.Session.GetString("FullName"), Admin Panele Hoş geldiniz.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

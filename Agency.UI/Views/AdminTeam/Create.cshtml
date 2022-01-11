@@ -1,0 +1,38 @@
+﻿@model Team
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <form asp-controller="AdminTeam" asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="All"></div>
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+
+                            <label>Resim</label>
+                            <input type="file" asp-for="UploadImage" />
+                            <br />
+                            <label>Ad Soyad</label>
+                            <input type="text" asp-for="Fullname" class="form-control" />
+                            <span asp-validation-for="Fullname" class="text-danger"></span>
+                            <br />
+                            <label>Unvan</label>
+                            <input type="text" asp-for="Unvan" class="form-control" />
+                            <span asp-validation-for="Unvan" class="text-danger"></span>
+                            <br />
+                            <button class="btn btn-primary" type="submit">Ekle</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

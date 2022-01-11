@@ -1,0 +1,26 @@
+﻿
+@model List<About>
+<section id="about" class="about-sec section-wrapper description">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+
+        
+        <div class="row">
+            <!-- Section Header -->
+            <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
+                <h2><span class="highlight-text">Hakkımızda</span></h2>
+
+                <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">@item.Description</p>
+            </div>
+           
+            <div class="col-md-2"></div>
+            <div class="col-md-6 col-sm-6 col-xs-12 custom-sec-img wow fadeInDown">
+                
+                <img src="~/img/@item.Image" alt="Custom Image" >
+            </div>
+
+        </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,29 @@
+﻿@model List<Clients>
+    <!-- Clients Section -->
+    <section id="clients" class="clients-section">
+        <!-- Container Ends -->
+        <div class="container">
+            <div class="row">
+                <!-- Section Header -->
+                <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
+                    <h2><span class="highlight-text">Müşterilerimiz</span></h2>
+
+                    <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Uzun zamandır bizlerle çalışan sorunsuz hizmet ve güven sağladığımız müşterilermizden bazıları...</p>
+                </div>
+                <!-- Section Header End -->
+                <div class="wow fadeInUpQuick" data-wow-delay=".9s">
+                    <div class="row" id="clients-carousel">
+                        @foreach (var item in Model)
+                        {
+                            <div class="client-item-wrapper">
+                                <img src="~/img/@item.Image" alt="">
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- Container Ends -->
+    </section>
+    <!-- Client Section End -->

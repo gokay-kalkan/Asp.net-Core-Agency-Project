@@ -1,0 +1,29 @@
+﻿@model Clients
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <form asp-controller="AdminClients" asp-action="Create" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+
+                            <label>Resim</label>
+                            <input type="file" asp-for="UploadImage" class="form-control" />
+                           <br />
+                            <button class="btn btn-primary" type="submit">Ekle</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

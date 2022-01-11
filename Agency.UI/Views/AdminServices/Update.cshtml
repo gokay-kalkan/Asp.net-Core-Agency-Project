@@ -1,0 +1,31 @@
+﻿@model Services
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <form asp-controller="AdminServices" asp-action="Update" method="post" >
+                        <input type="hidden" asp-for="Id"/>
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+
+                            <label>Servis</label>
+                            <input type="text" asp-for="Name" class="form-control" />
+                            <br />
+                            <label>Açıklama</label>
+                            <input type="text" asp-for="Description" class="form-control" />
+                            <button class="btn btn-primary" type="submit">Güncelle</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

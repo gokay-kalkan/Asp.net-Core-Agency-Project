@@ -1,0 +1,36 @@
+﻿@model List<Istatistic> 
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table table-striped table table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>Müşteriler</td>
+        <td>Teslim Edilen</td>
+        <td>Projeler</td>
+        <td>Teslim Edilen İcon</td>
+        <td>Yapılan Proje İcon</td>
+        <td>Müşteri İcon</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.Customers</td>
+    <td>@item.Completed</td>
+    <td>@item.Projects</td>
+    <td>@item.CompletedClass</td>
+    <td>@item.ProjectClass</td>
+    <td>@item.CustomersClass</td>
+    <td>@Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+    <td><a class="btn btn-primary" asp-controller="AdminIstatistic" asp-action="Update" asp-route-id="@item.Id">Güncelle</a></td>
+</tr>
+    }
+</table>
+<br />
+<a class="btn btn-primary" asp-action="Create">Ekle</a>

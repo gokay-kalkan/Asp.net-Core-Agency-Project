@@ -1,0 +1,30 @@
+﻿@model Clients
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <form asp-controller="AdminClients" asp-action="Update" method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="@Model.Id"/>
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label>Önceki Resim</label>
+                            <img src="~/img/@Model.Image" width="80" height="80"/>
+                            <label>Resim</label>
+                            <input type="file" asp-for="UploadImage" class="form-control" />
+                            <br />
+                            <button class="btn btn-primary" type="submit">Güncelle</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

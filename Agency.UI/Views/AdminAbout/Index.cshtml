@@ -1,0 +1,27 @@
+﻿@model List<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-striped table table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>Hakkımızda</td>
+        <td>Resim</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.Description</td>
+    <td><img src="~/img/@item.Image" width="70" height="70" /></td>
+    <td>@Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor musunuz?')" })</td>
+    <td><a class="btn btn-primary" asp-controller="AdminAbout" asp-action="Update" asp-route-id="@item.Id">Güncelle</a></td>
+</tr>
+    }
+</table>
+<br />
+<a class="btn btn-primary" asp-action="Create">Ekle</a>
